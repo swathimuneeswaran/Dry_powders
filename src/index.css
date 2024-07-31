@@ -1,0 +1,11 @@
+*{
+    margin: 0px;
+    border:none;
+    padding: 0px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body,html{
+    overflow-x: hidden;
+}
