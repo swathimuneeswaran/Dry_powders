@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import Navbar from "../component/Navbar";
 import "../styles/Main.css";
+import AOS from 'aos';
+AOS.init()
+import 'aos/dist/aos.css';
 import veg_powder from "../assets/images/veg_powder.jpg";
 import fruits1_powder from "../assets/images/fruits1_powder.jpg";
 import leaf1_powder from "../assets/images/leaf1_powder.jpg";
@@ -92,9 +95,9 @@ const Main = () => {
   return (
     <>
       <Navbar />
-      <section className="main_section">
+      <section className="main_section"  >
         <div className="main_back">
-          <div className="content">
+          <div className="content" data-aos="fade-right">
             <h1>
               Purely Natural,
               <br /> Perfectly Powdered
@@ -118,12 +121,14 @@ const Main = () => {
 
       <section className="why_choose_us">
         <h1>Our Main Goal is to Ensure Our Customers are Happy</h1>
-        <div className="why_choose">
+        <div className="why_choose" >
           <img
             src="https://dam.buhlergroup.com/rendition/e050e9611a094dfe8396852ab4c6961b/-FJPG-TwebHeader_1x1-S1024x1024"
             alt="Customer Satisfaction"
+            data-aos="fade-right"
+           
           />
-          <div className="choose">
+          <div className="choose" data-aos="fade-left">
             <h2>Why Choose Us</h2>
             <div className="benefits">
               <div className="benefit">
@@ -166,11 +171,12 @@ const Main = () => {
       <section className="variety_of_powders">
         <h1>Variety of Powders</h1>
         <div className="powders">
-          <div className="powder_item">
+          <div className="powder_item" >
             <img
               src={veg_powder}
               alt="Dehydrated Vegetable Powder"
               height="300"
+              data-aos="flip-left" data-aos-delay="200"
             />
             <h3>Dehydrated vegetable - flakes & powder</h3>
           </div>
@@ -179,15 +185,16 @@ const Main = () => {
               src={fruits1_powder}
               alt="Dehydrated Fruit Powder"
               height="300"
+              data-aos="flip-left" data-aos-delay="200"
             />
             <h3>Dehydrated fruit - flakes & powder</h3>
           </div>
           <div className="powder_item">
-            <img src={leaf1_powder} alt="Dehydrated Leaf Powder" />
+            <img src={leaf1_powder} alt="Dehydrated Leaf Powder" data-aos="flip-left" data-aos-delay="200"/>
             <h3>Dehydrated leaf - flakes & powder</h3>
           </div>
           <div className="powder_item">
-            <img src={rose_powder} alt="Dehydrated Rose Powder" />
+            <img src={rose_powder} alt="Dehydrated Rose Powder" data-aos="flip-left" data-aos-delay="200" />
             <h3>Dehydrated rose - flakes & powder</h3>
           </div>
         </div>
@@ -357,8 +364,8 @@ const Main = () => {
         </div>
       </section>
 
-      <section className="newsletter-section">
-        <div className="overlay">
+      <section className="newsletter-section" data-aos="flip-left" data-aos-delay="200">
+        <div className="overlay" >
           <h2>
             Unlock the Power of Nature with Our Dehydrated Powders. Join Now and
             Save!
