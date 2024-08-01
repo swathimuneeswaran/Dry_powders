@@ -1,10 +1,11 @@
 .navbar {
   display: flex;
   align-items: center;
-  background-color: rgb(244, 233, 218);
+  background-color: rgba(197, 224, 180, 255);
   padding: 10px 20px;
-  position: relative;
- 
+  position: fixed; 
+  width: 100%; /* Ensure the navbar spans the full width */
+  top: 0; /* Position the navbar at the top */
   z-index: 1000; /* Ensure the navbar is above other content */
 }
 
@@ -18,11 +19,15 @@
   flex-grow: 1;
 }
 
+.social-media a {
+  margin-left: 10px;
+}
+
 .navbar ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   list-style: none;
   margin-right: 40px;
@@ -66,7 +71,6 @@
   z-index: -1; /* Ensure it's behind the navbar */
 }
 
-
 .blurred-image img {
   max-width: 80%; /* Adjust image size */
   max-height: 80%;
@@ -95,6 +99,13 @@
 
   .navbar ul li {
     margin: 10px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 20px;
+  }
+  .social-media {
+    display: none;
   }
 
   .hamburger {

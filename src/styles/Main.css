@@ -1,14 +1,14 @@
 .main_back {
-  background: linear-gradient(to right, rgb(244, 146, 146), rgb(250, 236, 236));
+  background: rgba(255,236,171,255);
   width: 100%;
-  height: 635px;
+  height: auto !important;
   display: flex;
  
 
 }
 .main_back img {
   width: 25%;
-  height: 630px;
+  height: 733px;
 }
 .content {
   display: flex;
@@ -16,6 +16,7 @@
   /* justify-content: center; */
   align-items: center;
  padding: 130px;
+ margin-top: 90px;
  
 }
 .content h1{
@@ -25,7 +26,7 @@
 }
 
 .content h1::first-letter{
-  color:red;
+  color:rgba(177,204,160,255)  ;
   font-weight: bold;
   font-size: 80px;
 }
@@ -38,10 +39,10 @@
 }
 
 .content button{
-  padding: 20px;
-  font-size: medium;
+  /* padding: 10px; */
+  /* font-size: medium; */
   margin-top: 30px;
-  background-color: rgb(244, 233, 218);
+  background-color: rgba(197,224,180,255);
   font-weight: bold;
   cursor: pointer;
 
@@ -58,20 +59,30 @@
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center items horizontally */
     height: auto;
+  
   }
 
   .content {
+    /* margin-top: 30px!important;
     max-width: 80%;
     padding: 10px;
-    text-align: center; /* Center text within the content */
+    text-align: center;  */
+    max-width: 100%!important;
+    padding: 5px;
+    text-align: center;
+   
   }
 
   .main_back img {
-    width: 80%; /* Make images full width of their container */
-    max-width: 600px; /* Limit the maximum width for larger screens */
+    width: 90%!important; /* Make images full width of their container */
+    max-width: 100%; /* Limit the maximum width for larger screens */
     height: auto; /* Adjust height automatically */
-    display: block; /* Ensure the image is a block element */
+    display: none!important; 
     margin: 10px 0; /* Add vertical margin for spacing */
+    
+  }
+  .main_back{
+    padding-bottom: 40px!important; 
   }
 
   .content h1 {
@@ -99,11 +110,12 @@
   .content {
     max-width: 80%;
     padding: 10px;
+    margin-top: 200px!important;
     text-align: center; /* Center text within the content */
   }
 
   .main_back img {
-    width: 80%; /* Make images full width of their container */
+    width: 30%; /* Make images full width of their container */
     max-width: 600px; /* Limit the maximum width for larger screens */
     height: auto; /* Adjust height automatically */
     display: block; /* Ensure the image is a block element */
@@ -126,6 +138,48 @@
     padding: 15px;
     font-size: small;
   }
+  /* .image_fruits{
+    width: 30%;
+  } */
+}
+
+
+@media screen and (max-width: 1260px) {
+ 
+  .content {
+    max-width: 80%;
+    padding: 10px;
+    margin-top: 200px!important;
+    text-align: center; /* Center text within the content */
+  }
+
+  .main_back img {
+    width: 30%; /* Make images full width of their container */
+    max-width: 600px; /* Limit the maximum width for larger screens */
+    height: auto; /* Adjust height automatically */
+    display: block; /* Ensure the image is a block element */
+    margin: 10px 0; /* Add vertical margin for spacing */
+  }
+
+  .content h1 {
+    font-size: 40px!important;
+  }
+
+  .content h1::first-letter {
+    font-size: 50px!important;
+  }
+
+  .content h3 {
+    font-size: 18px!important;
+  }
+
+  .content button {
+    padding: 15px;
+    font-size: small;
+  }
+  /* .image_fruits{
+    width: 30%;
+  } */
 }
 
 /* Mobile Phones */
@@ -134,14 +188,19 @@
     max-width: 100%;
     padding: 5px;
     text-align: center;
+    margin-top: 140px!important;
+    height:auto;
+  }
+  .main_back{
+    padding-bottom: 40px!important; 
   }
 
   .main_back img {
     width: 80%; /* Make images full width of their container */
     max-width: 600px; /* Limit the maximum width for larger screens */
     height: auto; /* Adjust height automatically */
-    display: block; /* Ensure the image is a block element */
-    margin: 10px 0;
+    margin-bottom: 40px!important; 
+    /* margin: 10px 0; */
   }
 
   .content h1 {
@@ -292,124 +351,198 @@
 
 .poster_sec {
   display: flex;
-  padding:40px;
+ 
+ 
+  
 }
 
 .image1_veg {
   width: 50%;
-  height:860px;
+  height:710px;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
+  
+  /* padding: 0 4px;
+  margin-top: 0px; */
 }
 
 .column {
   flex: 25%;
-  max-width: 40%;
+  /* max-width: 40%;
+   
   padding: 0 4px;
+  height:600px;
+  backdrop-filter: blur(10px); */
+  height:710px;
+   overflow-y: hidden!important;
+  
 }
 
 .row h3{
   font-size: 17px;
-  margin-top: 10px;
+  margin-top: 40px;
   font-weight: 100;
+  margin-bottom: 30px;
 }
 
 .row h3 button{
   padding:5px;
   background: green;
-  color:white
+  color:white;
+  margin-left: 60px;
 }
 
 .column img {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   vertical-align: middle;
   width: 100%;
+  padding: 5px;
+ 
 }
 
-@media (max-width: 768px) {
+/*  */
+
+@media (min-width: 701px) and (max-width: 1024px) {
   .poster_sec {
-    flex-direction: column; /* Stack main image and grid images on smaller screens */
-    align-items: center; /* Center align content */
+    flex-direction: row; 
+    align-items: center; 
   }
 
   .image1_veg {
     width: 100%; /* Make main image full width */
-    height: auto; /* Allow height to adjust automatically */
+    height: 500px; /* Allow height to adjust automatically */
   }
 
   .row {
     display: flex; /* Ensure row displays as flex */
     flex-wrap: wrap; /* Allow wrapping of items */
     justify-content: center; /* Center align the row items */
+    margin-top: 0px;
   }
+
 
   .column {
     display: flex;
     flex-direction: row; /* Arrange images in a row */
-    flex: 1 0 45%; /* Allow each column to take up to 45% of the row */
-    max-width: 45%; /* Limit the maximum width of columns */
-    padding: 0 4px; /* Keep existing padding */
+    flex: 50%;
+    gap:5px;
+    max-width: 100%;
+    height: 300px;
+    padding: 10px;
+    
+  }
+
+  .col1{
+   display: none;
   }
 
   .column img {
-    width: 30%; /* Make images responsive to column width */
-    height: auto; /* Adjust height automatically */
+    width: 70%; /* Make images responsive to column width */
+    height: 300px; /* Adjust height automatically */
     max-width: 400px; /* Set a maximum width for smaller images */
+    border-radius: 10px;
   }
+  .poster_sec h3{
+    margin-left: 30px;
+  }
+
+
+ 
 }
 
 
-@media (max-width: 480px) {
+@media (min-width: 1025px) and (max-width: 1250px) {
   .poster_sec {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center align content */
+    flex-direction: row; 
+    align-items: center; 
   }
 
   .image1_veg {
     width: 100%; /* Make main image full width */
-    height: auto; /* Allow height to adjust automatically */
+    height: 600px; /* Allow height to adjust automatically */
   }
 
   .row {
     display: flex; /* Ensure row displays as flex */
-    flex-direction: row; /* Keep images in a row */
+    flex-wrap: wrap; /* Allow wrapping of items */
     justify-content: center; /* Center align the row items */
+    margin-top: 0px;
   }
 
+
   .column {
-    flex: 1; /* Allow each column to take equal space */
-    max-width: 100%; /* Limit the maximum width of columns */
     display: flex;
-    justify-content: center; /* Center images in each column */
+    flex-direction: row; /* Arrange images in a row */
+    flex: 50%;
+    gap:5px;
+    max-width: 100%;
+    height: 400px;
+    padding: 10px;
+    
+  }
+
+  .col1{
+   display: none;
   }
 
   .column img {
-    width: 40%; /* Make images responsive to column width */
-    height: auto; /* Adjust height automatically */
-    max-width: 200px; /* Set a maximum width for smaller images */
+    width: 60%; /* Make images responsive to column width */
+    height: 400px; /* Adjust height automatically */
+    max-width: 400px; /* Set a maximum width for smaller images */
+    border-radius: 10px;
   }
+
+
+ 
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+
+@media (max-width: 700px) {
+  .poster_sec {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image1_veg {
+    width: 100%;
+    height: 300px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .column {
-    flex: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 30%;
     max-width: 100%;
+    height: 300px;
   }
+
+  .col1 {
+    display: none;
+  }
+
+  .column img {
+    width: 50%;
+    height: 300px;
+    max-width: 400px;
+  }
+
 }
+
+
+
+
 
 .quality{
   display: flex;
@@ -465,11 +598,15 @@ font-size: 30px;
   .quality {
     flex-direction: column!important;
     align-items: center;
+    width: 100%!important;
   }
 
   .quality img {
-    width: 100%;
+    width: 100%!important;
     height: auto;
+    display: flex!important;
+    
+   
   }
 
   .quality div h3 {
@@ -664,8 +801,8 @@ font-size: 30px;
 
 
 .footer {
-  background-color: #333;
-  color: white;
+  background-color:rgba(197,224,180,255);
+  color: black;
   padding: 20px 0;
 }
 
@@ -690,7 +827,7 @@ font-size: 30px;
 
 .footer p, .footer a {
   margin-bottom: 10px;
-  color: white;
+  /* color: white; */
   text-decoration: none;
 }
 
@@ -707,4 +844,16 @@ font-size: 30px;
   text-decoration: underline;
 }
 
+.footer-logo img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #ddd;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
 
