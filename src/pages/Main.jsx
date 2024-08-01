@@ -228,9 +228,7 @@ const Main = () => {
                 </div>
                 <h3>
                   Dehydrated fruit powder is made by drying fresh fruits and
-                  then grinding them into a fine powder. This process preserves
-                  the flavor, color, and most of the nutrients of the fresh
-                  fruit while extending its shelf life.<button>Know More</button>
+                  then grinding them into a fine powder. <button>Know More</button>
                 </h3>
               </div>
             </div>
@@ -262,9 +260,7 @@ const Main = () => {
                 </div>
                 <h3>
                   Dehydrated fruit powder is made by drying fresh fruits and
-                  then grinding them into a fine powder. This process preserves
-                  the flavor, color, and most of the nutrients of the fresh
-                  fruit while extending its shelf life.<button>Know More</button>
+                  then grinding them into a fine powder. <button>Know More</button>
                 </h3>
               </div>
             </div>
@@ -295,10 +291,7 @@ const Main = () => {
                 </div>
                 <h3>
                   Dehydrated leaf powder is produced by drying and grinding
-                  various types of edible leaves into a fine powder. This
-                  process preserves the nutritional benefits and flavor of the
-                  fresh leaves while significantly extending their shelf life.
-                 
+                  various types of edible leaves into a fine powder.
                   <button>Know More</button>
                 </h3>
               </div>
@@ -316,7 +309,7 @@ const Main = () => {
                 <div className="column">
                   <img src={rose1} alt="Rose 1" />
                   <img src={rose2} alt="Rose 2" />
-                  <img src={rose3} />
+                  <img src={rose3} className="col1"/>
                 </div>
                 <div className="column col1">
                   <img src={rose4} alt="Rose 4" />
@@ -330,9 +323,7 @@ const Main = () => {
                 <h3>
                   {" "}
                   Dehydrated rose powder is made by drying and grinding rose
-                  petals into a fine powder. This process preserves the
-                  aromatic, nutritional, and therapeutic properties of the
-                  roses. Here’s an in-depth look at dehydrated rose powder
+                  petals into a fine powder. 
                   <button>Know More</button>
                 </h3>
               </div>
