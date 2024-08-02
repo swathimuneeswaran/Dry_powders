@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: auto;
+  background: rgba(197, 224, 180, 255)!important;
 }
 
 .landing-container {
@@ -82,7 +83,7 @@
 }
 
 .manufacturing_unit {
-  width: 100%;
+  width: 50%;
   height: auto;
   display: none; /* Hidden by default */
 }
@@ -237,13 +238,13 @@
     width: 160px;
     position: absolute;
     top:50px;
-    left:280px
+    left:200px
   }
   .home_text {
     font-size: 1.3em;
     position: absolute;
     top:290px;
-    left:180px;
+    left:90px;
     width:400px;
   }
   .home_button {
@@ -251,13 +252,48 @@
     padding: 12px 24px;
     position: absolute;
     top:230px;
-    left:300px
+    left:230px
   }
   .home_button_icon {
     font-size: 1.4em;
   }
-  .arrow_back,.arrow_for{
-    display:block;
+  .arrow_back, .arrow_for{
+    display: none; 
   }
 }
+
+@media screen and (min-width:1225px)
+{
+  .landing{
+    height: 780px;
+  }
+  .manufacturing_unit{
+    height: 780px;
+  }
+  .company_logo {
+    width: 160px;
+    position: absolute;
+    top:50px;
+    left:290px
+  }
+  .home_text {
+    font-size: 1.3em;
+    position: absolute;
+    top:290px;
+    left:160px;
+    width:400px;
+  }
+  .home_button {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    position: absolute;
+    top:230px;
+    left:290px
+  }
+  .home_button_icon {
+    font-size: 1.4em;
+  }
+}
+
+
 

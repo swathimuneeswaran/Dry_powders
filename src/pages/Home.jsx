@@ -7,10 +7,12 @@ import Manu_unit3 from "../assets/images/Manu_unit3.jpg";
 import Manu_unit6 from "../assets/images/Manu_unit6.jpg";
 import Manu_unit5 from "../assets/images/Manu_unit5.jpg";
 import Company_logo from "../assets/images/Company_logo.png";
+import { useNavigate } from "react-router-dom";
 
 const images = [Manu_unit1, Manu_unit2, Manu_unit3, Manu_unit6, Manu_unit5];
 
 const Home = () => {
+  const Navigate=useNavigate()
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevClick = () => {
@@ -23,13 +25,16 @@ const Home = () => {
     setCurrentIndex(nextIndex);
   };
 
+   const handleClick=()=>{
+    Navigate("/home")
+   }
   return (
     <div className="home">
       <div className="landing-container">
         <img className="landing" src={landing} alt="Landing" />
         <div className="overlay">
           <img className="company_logo" src={Company_logo} alt="Company Logo" />
-          <button className="home_button">
+          <button className="home_button" onClick={handleClick}>
             <span className="home_button_text">Home</span>
             <span className="home_button_icon material-symbols-outlined">
               arrow_forward

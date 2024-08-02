@@ -21,6 +21,11 @@
 
 .social-media a {
   margin-left: 10px;
+  color:black;
+}
+
+.social-media a:hover{
+  color:blue;
 }
 
 .navbar ul {

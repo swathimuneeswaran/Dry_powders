@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import "../styles/Main.css";
-import AOS from 'aos';
-AOS.init()
-import 'aos/dist/aos.css';
+import AOS from "aos";
+AOS.init();
+import "aos/dist/aos.css";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import veg_powder from "../assets/images/veg_powder.jpg";
 import fruits1_powder from "../assets/images/fruits1_powder.jpg";
 import leaf1_powder from "../assets/images/leaf1_powder.jpg";
@@ -14,12 +17,14 @@ import veg_poster from "../assets/images/veg_poster.jpg";
 import rose_poster from "../assets/images/rose_poster.jpg";
 import beetroot_flakes from "../assets/images/beetroot_flakes.jpg";
 import bitter_powder from "../assets/images/bitter_powder.jpg";
+import ginger_nobg from "../assets/images/ginger_nobg.png";
 import peas_powder from "../assets/images/peas_powder.jpg";
+import mango_about from "../assets/images/mango_about.jpg";
 import ginger from "../assets/images/ginger.jpg";
 import carrot_flakes from "../assets/images/carrot_flakes.jpg";
 import tomato_flakes from "../assets/images/tomato_flakes.jpg";
 import lemon_powder from "../assets/images/lemon_powder.jpg";
-import Company_logo from '../assets/images/Company_logo.png';
+import Company_logo from "../assets/images/Company_logo.png";
 import apple_flakes from "../assets/images/apple_flakes.png";
 import banana_flakes from "../assets/images/banana_flakes.jpg";
 import pineapple_flakes from "../assets/images/pineapple_flakes.png";
@@ -27,7 +32,7 @@ import kiwi_powder from "../assets/images/kiwi_powder.png";
 import mango_powder from "../assets/images/mango_powder.png";
 import jack_flakes from "../assets/images/jack_flakes.png";
 import orange_powder from "../assets/images/orange_powder.png";
-
+import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
 import rose1 from "../assets/images/rose1.png";
 import rose2 from "../assets/images/rose2.jpg";
 import rose3 from "../assets/images/rose3.jpg";
@@ -50,6 +55,140 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import new_poster from "../assets/images/banner2.jpg";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+import apple_flake from "../assets/powders/apple_flake.png";
+import apple_pow from "../assets/powders/apple_pow.png";
+import apri_flake from "../assets/powders/apri_flake.png";
+import apri_pow from "../assets/powders/apri_pow.png";
+import ban_pow from "../assets/powders/ban_pow.png";
+import bitter_pow from "../assets/powders/bitter_pow.jpg";
+import cab_pow from "../assets/powders/cab_pow.png";
+import cap_flake from "../assets/powders/cap_flake.png";
+import cap_pow from "../assets/powders/cap_pow.png";
+import carrot_pow from "../assets/powders/carrot_pow.jpg";
+import cory_flake from "../assets/powders/cory_flake.png";
+import cory_pow from "../assets/powders/cory_pow.png";
+import curry_flake from "../assets/powders/curry_flake.png";
+import curry_pow from "../assets/powders/curry_pow.png";
+import drum_flake from "../assets/powders/apple_flake.png";
+import drum_pow from "../assets/powders/drum_pow.jpg";
+import garlic_flake from "../assets/powders/garlic_flake.png";
+import ginger_pow from "../assets/powders/ginger_pow.jpg";
+import goa_flake from "../assets/powders/goa_flake.png";
+
+const pro = [
+  {
+    id: 1,
+    image: apple_flake,
+    name: "Apple Flakes",
+  },
+  {
+    id: 2,
+    image: apple_pow,
+    name: "Apple Powder",
+  },
+  {
+    id: 3,
+    image: apri_flake,
+    name: "Apricot Flakes",
+  },
+  {
+    id: 4,
+    image: apri_pow,
+    name: "Apricot Powder",
+  },
+  {
+    id: 5,
+    image: ban_pow,
+    name: "bannana Powder",
+  },
+  {
+    id: 6,
+    image: bitter_pow,
+    name: "Bitter Guard Powder",
+  },
+  {
+    id: 7,
+    image: cab_pow,
+    name: "Cabbage Powder",
+  },
+  {
+    id: 8,
+    image: cap_flake,
+    name: "Capsicum Flakes",
+  },
+  {
+    id: 9,
+    image: cap_pow,
+    name: "Capsicum Powder",
+  },
+  {
+    id: 10,
+    image: carrot_pow,
+    name: "Carrot Powder",
+  },
+  {
+    id: 11,
+    image: cory_flake,
+    name: "Corainder Flakes",
+  },
+  {
+    id: 12,
+    image: cory_pow,
+    name: "Coriander Powder",
+  },
+  {
+    id: 13,
+    image: curry_flake,
+    name: "Curryleaves Flakes",
+  },
+  {
+    id: 14,
+    image: curry_pow,
+    name: "Curryleaves Powder",
+  },
+  {
+    id: 15,
+    image: drum_flake,
+    name: "Drumstick Flakes",
+  },
+  {
+    id: 16,
+    image: garlic_flake,
+    name: "Garlic Flakes",
+  },
+  {
+    id: 17,
+    image: ginger_pow,
+    name: "Ginger Powder",
+  },
+  {
+    id: 18,
+    image: goa_flake,
+    name: "Guava Flakes",
+  },
+];
+
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 5,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 const Main = () => {
   const settings = {
@@ -92,10 +231,34 @@ const Main = () => {
       window.removeEventListener("resize", updateImageSource);
     };
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission, e.g., send data to the server
+    console.log("Form data submitted:", formData);
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
   return (
     <>
       <Navbar />
-      <section className="main_section"  >
+      <section className="main_section">
         <div className="main_back">
           <div className="content" data-aos="fade-right">
             <h1>
@@ -121,48 +284,43 @@ const Main = () => {
 
       <section className="why_choose_us">
         <h1>Our Main Goal is to Ensure Our Customers are Happy</h1>
-        <div className="why_choose" >
+        <div className="why_container">
           <img
-            src="https://dam.buhlergroup.com/rendition/e050e9611a094dfe8396852ab4c6961b/-FJPG-TwebHeader_1x1-S1024x1024"
+            src={mango_about}
             alt="Customer Satisfaction"
             data-aos="fade-right"
-           
           />
           <div className="choose" data-aos="fade-left">
             <h2>Why Choose Us</h2>
             <div className="benefits">
-              <div className="benefit">
-                <span className="material-symbols-outlined">
-                  local_shipping
-                </span>
-                <div className="box">
-                  <h4>Fast Shipping</h4>
-                  <p>
-                    We ensure quick and safe delivery of your orders to your
-                    doorstep.
-                  </p>
-                </div>
-              </div>
-              <div className="benefit">
-                <span className="material-symbols-outlined">cardiology</span>
-                <div className="box">
-                  <h4>Heart-Healthy Products</h4>
-                  <p>
-                    Our products are designed to promote a healthy lifestyle and
-                    well-being.
-                  </p>
-                </div>
-              </div>
-              <div className="benefit">
-                <span className="material-symbols-outlined">high_quality</span>
-                <div className="box">
-                  <h4>High Quality</h4>
-                  <p>
-                    We offer premium quality products made from the finest
-                    ingredients.
-                  </p>
-                </div>
-              </div>
+              <ul>
+                <li>
+                  <span className="material-symbols-outlined">eco</span>
+                  Premium Quality: Nutrient-rich dehydrated fruits and
+                  vegetables, available in raw and powdered forms.
+                </li>
+                <li>
+                  <span className="material-symbols-outlined">eco</span>
+                  Versatile Applications: Ideal for food manufacturing, dietary
+                  supplements, pet food, cosmetics, Ayurvedic medicine, and
+                  instant foods.
+                </li>
+                <li>
+                  <span className="material-symbols-outlined">eco</span>
+                  Eco-Friendly: Advanced solar drying technology reduces
+                  environmental impact and food waste.
+                </li>
+                <li>
+                  <span className="material-symbols-outlined">eco</span>
+                  Empowering Farmers: Supports sustainable agriculture and local
+                  farming communities.
+                </li>
+                <li>
+                  <span className="material-symbols-outlined">eco</span>
+                  Global Reach: Robust export and import capabilities with ISO,
+                  MSME, APEDA, FEDA, and FSSAI certification.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -171,31 +329,41 @@ const Main = () => {
       <section className="variety_of_powders">
         <h1>Variety of Powders</h1>
         <div className="powders">
-          <div className="powder_item" >
+          <div className="powder_item">
             <img
               src={veg_powder}
               alt="Dehydrated Vegetable Powder"
-              height="300"
-              data-aos="flip-left" data-aos-delay="200"
+              data-aos="flip-left"
+              data-aos-delay="200"
             />
-            <h3>Dehydrated vegetable - flakes & powder</h3>
+            <h3>Vegetable - flakes & powder</h3>
           </div>
           <div className="powder_item">
             <img
               src={fruits1_powder}
               alt="Dehydrated Fruit Powder"
-              height="300"
-              data-aos="flip-left" data-aos-delay="200"
+              data-aos="flip-left"
+              data-aos-delay="200"
             />
-            <h3>Dehydrated fruit - flakes & powder</h3>
+            <h3>Fruit - flakes & powder</h3>
           </div>
           <div className="powder_item">
-            <img src={leaf1_powder} alt="Dehydrated Leaf Powder" data-aos="flip-left" data-aos-delay="200"/>
-            <h3>Dehydrated leaf - flakes & powder</h3>
+            <img
+              src={leaf1_powder}
+              alt="Dehydrated Leaf Powder"
+              data-aos="flip-left"
+              data-aos-delay="200"
+            />
+            <h3>Leaf - flakes & powder</h3>
           </div>
           <div className="powder_item">
-            <img src={rose_powder} alt="Dehydrated Rose Powder" data-aos="flip-left" data-aos-delay="200" />
-            <h3>Dehydrated rose - flakes & powder</h3>
+            <img
+              src={rose_powder}
+              alt="Dehydrated Rose Powder"
+              data-aos="flip-left"
+              data-aos-delay="200"
+            />
+            <h3>Rose - flakes & powder</h3>
           </div>
         </div>
       </section>
@@ -228,7 +396,8 @@ const Main = () => {
                 </div>
                 <h3>
                   Dehydrated fruit powder is made by drying fresh fruits and
-                  then grinding them into a fine powder. <button>Know More</button>
+                  then grinding them into a fine powder.{" "}
+                  <button>Know More</button>
                 </h3>
               </div>
             </div>
@@ -260,7 +429,8 @@ const Main = () => {
                 </div>
                 <h3>
                   Dehydrated fruit powder is made by drying fresh fruits and
-                  then grinding them into a fine powder. <button>Know More</button>
+                  then grinding them into a fine powder.{" "}
+                  <button>Know More</button>
                 </h3>
               </div>
             </div>
@@ -309,7 +479,7 @@ const Main = () => {
                 <div className="column">
                   <img src={rose1} alt="Rose 1" />
                   <img src={rose2} alt="Rose 2" />
-                  <img src={rose3} className="col1"/>
+                  <img src={rose3} className="col1" />
                 </div>
                 <div className="column col1">
                   <img src={rose4} alt="Rose 4" />
@@ -323,7 +493,7 @@ const Main = () => {
                 <h3>
                   {" "}
                   Dehydrated rose powder is made by drying and grinding rose
-                  petals into a fine powder. 
+                  petals into a fine powder.
                   <button>Know More</button>
                 </h3>
               </div>
@@ -332,53 +502,97 @@ const Main = () => {
         </Slider>
       </section>
 
-      <section>
-        <h1
-          style={{ textAlign: "center", fontSize: "39px", marginTop: "80px" }}
+      <section className="products-section">
+        <h1>Products</h1>
+        <Carousel
+          responsive={responsive}
+          showDots={false}
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={3000}
+          containerClass="carousel-container"
+          itemClass="carousel-item"
         >
-          Health Benefits
-        </h1>
-        <div className="quality">
-          <div>
-            <h3>Health Benefits of Dehydrated Powder</h3>
-            <p>
-              Dehydrated fruit, vegetable, leaf, and rose powders are
-              nutrient-dense, providing essential vitamins, minerals, and
-              antioxidants that support immune health and overall wellness. They
-              also offer anti-inflammatory and digestive benefits, promoting a
-              healthy body and skin.
-            </p>
-          </div>
-          <img src="https://img.ws.mms.shopee.ph/sg-11134201-7rblq-llujjlzattuie5" />
-          <img src="https://arealcc.com/images/products/1707480342.webp" />
-          <img src="https://www.osheaherbals.com/cdn/shop/articles/benefits-of-rose-powder-for-skin.jpg?v=1702476662" />
-        </div>
+          {pro.map((item, ind) => (
+            <div className="quality" key={ind}>
+              <img src={item.image} alt={`Product ${item.id}`} />
+              <h3>{item.name}</h3>
+            </div>
+          ))}
+        </Carousel>
       </section>
 
-      <section className="newsletter-section" data-aos="flip-left" data-aos-delay="200">
-        <div className="overlay" >
-          <h2>
-            Unlock the Power of Nature with Our Dehydrated Powders. Join Now and
-            Save!
-          </h2>
-          <input type="text" placeholder="Enter your email" />
-          <button>Send Email</button>
-        </div>
-        <img
-          src="https://i0.wp.com/choicetitle.com/wp-content/uploads/2023/09/AdobeStock_gold-pineapples-black-right-side-1.jpg?resize=1180%2C530&ssl=1"
-          alt="Newsletter Banner"
-        />
+      <section className="enquiry-section">
+        <h1>Enquiry Form</h1>
+
+        <form className="enquiry-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </section>
 
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-logo">
-          <img src={Company_logo} alt="Company Logo" />
+            <img src={Company_logo} alt="Company Logo" />
             <h2>Shree Hari Global Foods</h2>
             <p>
               is one of the leading fresh fruit vegetables, spices and grains
               export Company from INDIA.
             </p>
+            <div className="social-media">
+              <a href="https://www.instagram.com/shreehariglobalfoods/">
+                <InstagramIcon />
+              </a>
+              <a href="https://www.instagram.com/shreehariglobalfoods/">
+                <TwitterIcon />
+              </a>
+              <a href="https://www.instagram.com/shreehariglobalfoods/">
+                <FacebookIcon />
+              </a>
+            </div>
           </div>
           <div className="footer-links">
             <h3>Quick Links</h3>
@@ -424,11 +638,10 @@ const Main = () => {
           {/* <div className="footer-social">
             <h3>Follow Us</h3>
           </div> */}
-        
         </div>
         <div className="footer-bottom">
-        <p>&copy; 2024 Shree Hari Global Foods. All rights reserved.</p>
-      </div>
+          <p>&copy; 2024 Shree Hari Global Foods. All rights reserved.</p>
+        </div>
       </footer>
     </>
   );
