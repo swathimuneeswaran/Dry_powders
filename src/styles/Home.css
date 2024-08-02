@@ -293,6 +293,11 @@
   .home_button_icon {
     font-size: 1.4em;
   }
+  .arrow_back, .arrow_for{
+    display: block; 
+    color:white;
+  }
+
 }
 
 
