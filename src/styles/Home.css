@@ -1,49 +1,45 @@
-.home {
-  position: relative;
-  width: 100%;
-  height: auto;
-  background: rgba(197, 224, 180, 255)!important;
-}
-
-.landing-container {
-  position: relative;
-  width: 100%;
+#home_section {
+  background-image: url("../assets/images/landing1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:contain;
+  height: 100vh;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 28vh;
+}
+
+#home {
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* #home_button{
+  position: absolute;
+  top:28vh;
+  left:40%;
+} */
+
+.landing-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .landing {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 50%;
+  height: 100vh;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  padding-top: 40px;
-  box-sizing: border-box;
-}
-
-.company_logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.home_text {
-  font-size: 1.2em;
-  color: green;
-  margin-bottom: 20px;
-  padding: 0 10px;
+.manufacturing_unit {
+ 
+  height: 100vh;
 }
 
 .home_button {
@@ -56,6 +52,15 @@
   font-size: 1em;
   cursor: pointer;
   border-radius: 5px;
+
+  position: absolute;
+  left: 320px;
+  top: 210px;
+}
+
+.home_button:hover {
+  background-color: darkgreen;
+  transform: scale(1.05);
 }
 
 .home_button_text {
@@ -65,240 +70,58 @@
 .home_button_icon {
   font-size: 1.2em;
 }
-.arrow_back{
- position: absolute;
- top:400px;
- left:770px;
- font-size: 40px;
- color:green;
- cursor:pointer;
-}
-
-.arrow_for{
-  position: absolute;
-  top:400px;
-  left:1460px;
- color:green;
- cursor:pointer;
-}
-
-.manufacturing_unit {
-  width: 50%;
-  height: auto;
-  display: none; /* Hidden by default */
-}
 
 @media screen and (max-width: 400px) {
-  .landing {
-    height: 600px;
-  }
-  .company_logo {
-    width: 80px;
-  }
-  .home_text {
-    font-size: 1em;
-    margin-top: 40px;
-    width: 280px;
-  }
-  .home_button {
-    font-size: 0.9em;
-    padding: 8px 16px;
-    margin-top: 40px;
-  }
-  .home_button_icon {
-    font-size: 1em;
-  }
-  .arrow_back, .arrow_for{
-    display: none; 
-  }
-}
-
-@media screen and (min-width: 401px) and (max-width: 600px) {
-  .landing {
-    height: 600px;
-  }
-  .company_logo {
-    width: 90px;
-  }
-  .home_text {
-    font-size: 1.1em;
-    margin-top: 20px;
-    width: 280px;
-  }
-  .home_button {
-    font-size: 0.95em;
-    padding: 9px 18px;
-    margin-top: 50px;
-  }
-  .home_button_icon {
-    font-size: 1.1em;
-  }
-  .arrow_back, .arrow_for{
-    display: none; 
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 679px) {
-  .landing {
-    height: 680px;
-  }
-  .company_logo {
-    width: 100px;
-  }
-  .home_text {
-    font-size: 1.2em;
-    margin-top: 20px;
-    width: 280px;
-  }
-  .home_button {
-    font-size: 1em;
-    padding: 10px 20px;
-    margin-top: 50px;
-  }
-  .home_button_icon {
-    font-size: 1.2em;
-  }
-  .arrow_back, .arrow_for{
-    display: none; 
-  }
-  
-
-}
-
-@media screen and (min-width: 680px) {
   .landing-container {
-    flex-direction: row; /* Row layout for landing and manufacturing images */
+    flex-direction: column;
   }
+
+  .manufacturing_unit {
+    display: none;
+  }
+
   .landing {
-    flex: 1;
+    width: 100% !important;
     height: auto;
   }
+
+  .home_button {
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .landing-container {
+    flex-direction: column;
+  }
+
+  .landing,
   .manufacturing_unit {
-    flex: 1;
-    display: block; /* Show on larger screens */
-  }
-  .company_logo {
-    width: 100px;
-    position: absolute;
-    top:50px;
-    left:180px
-    
-  }
-  .home_text {
-    font-size: 1.2em;
-    margin-top: 20px;
-    width: 280px;
-    position: absolute;
-    top:230px;
-    left:90px
-  }
-  .home_button {
-    font-size: 1em;
-    padding: 10px 20px;
-    position: absolute;
-    top:190px;
-    left:180px
-  }
-  .home_button_icon {
-    font-size: 1.2em;
-  }
-  .arrow_back, .arrow_for{
-    display: none; 
+    width: 100%;
+    height: 50vh;
   }
 
-}
-
-@media screen and (min-width:800px) {
-  .company_logo {
-    width: 120px;
-  }
-  .home_text {
-    font-size: 1.3em;
-  }
   .home_button {
-    font-size: 1.2em;
-    padding: 12px 24px;
-  }
-  .home_button_icon {
-    font-size: 1.4em;
-  }
-  .arrow_back, .arrow_for{
-    display: none; 
+    position: absolute;
+    left: 130px;
+    top: 150px;
   }
 }
 
-@media screen and (min-width:1140px) {
-  .landing{
-    height: 780px;
+@media screen and (max-width: 1021px) {
+  .landing-container {
+    flex-direction: row;
   }
-  .manufacturing_unit{
-    height: 780px;
+
+  .landing,
+  .manufacturing_unit {
+    width: 50%;
+    height: 100vh;
   }
-  .company_logo {
-    width: 160px;
-    position: absolute;
-    top:50px;
-    left:200px
-  }
-  .home_text {
-    font-size: 1.3em;
-    position: absolute;
-    top:290px;
-    left:90px;
-    width:400px;
-  }
+
   .home_button {
-    font-size: 1.2em;
-    padding: 12px 24px;
     position: absolute;
-    top:230px;
-    left:230px
-  }
-  .home_button_icon {
-    font-size: 1.4em;
-  }
-  .arrow_back, .arrow_for{
-    display: none; 
+    left: 170px;
+    top: 150px;
   }
 }
-
-@media screen and (min-width:1225px)
-{
-  .landing{
-    height: 780px;
-  }
-  .manufacturing_unit{
-    height: 780px;
-  }
-  .company_logo {
-    width: 160px;
-    position: absolute;
-    top:50px;
-    left:290px
-  }
-  .home_text {
-    font-size: 1.3em;
-    position: absolute;
-    top:290px;
-    left:160px;
-    width:400px;
-  }
-  .home_button {
-    font-size: 1.2em;
-    padding: 12px 24px;
-    position: absolute;
-    top:230px;
-    left:290px
-  }
-  .home_button_icon {
-    font-size: 1.4em;
-  }
-  .arrow_back, .arrow_for{
-    display: block; 
-    color:white;
-  }
-
-}
-
-
-

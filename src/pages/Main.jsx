@@ -72,123 +72,26 @@ import cory_flake from "../assets/powders/cory_flake.png";
 import cory_pow from "../assets/powders/cory_pow.png";
 import curry_flake from "../assets/powders/curry_flake.png";
 import curry_pow from "../assets/powders/curry_pow.png";
-import drum_flake from "../assets/powders/apple_flake.png";
+import drum_flake from "../assets/powders/drum_flake.png";
 import drum_pow from "../assets/powders/drum_pow.jpg";
 import garlic_flake from "../assets/powders/garlic_flake.png";
 import ginger_pow from "../assets/powders/ginger_pow.jpg";
 import goa_flake from "../assets/powders/goa_flake.png";
+import goose_flake from "../assets/powders/goose_flake.png";
+import goose_pow from "../assets/powders/goose_pow.png";
+import green_flake from "../assets/powders/green_flake.png";
+import rose_flake from "../assets/powders/rose_flake.png";
+import rose_pow from "../assets/powders/rose_pow.jpg";
+import sap_flake from "../assets/powders/sap_flake.png";
+import sap_pow from "../assets/powders/sap_pow.png";
+import back1 from "../assets/images/back1.jpg";
+import back3 from "../assets/powders/back3.jpg";
+import rose_back from "../assets/powders/rose_back.jpg";
+import Frontlanding from "../component/Frontlanding";
+import Products from "../component/Products";
 
-const pro = [
-  {
-    id: 1,
-    image: apple_flake,
-    name: "Apple Flakes",
-  },
-  {
-    id: 2,
-    image: apple_pow,
-    name: "Apple Powder",
-  },
-  {
-    id: 3,
-    image: apri_flake,
-    name: "Apricot Flakes",
-  },
-  {
-    id: 4,
-    image: apri_pow,
-    name: "Apricot Powder",
-  },
-  {
-    id: 5,
-    image: ban_pow,
-    name: "bannana Powder",
-  },
-  {
-    id: 6,
-    image: bitter_pow,
-    name: "Bitter Guard Powder",
-  },
-  {
-    id: 7,
-    image: cab_pow,
-    name: "Cabbage Powder",
-  },
-  {
-    id: 8,
-    image: cap_flake,
-    name: "Capsicum Flakes",
-  },
-  {
-    id: 9,
-    image: cap_pow,
-    name: "Capsicum Powder",
-  },
-  {
-    id: 10,
-    image: carrot_pow,
-    name: "Carrot Powder",
-  },
-  {
-    id: 11,
-    image: cory_flake,
-    name: "Corainder Flakes",
-  },
-  {
-    id: 12,
-    image: cory_pow,
-    name: "Coriander Powder",
-  },
-  {
-    id: 13,
-    image: curry_flake,
-    name: "Curryleaves Flakes",
-  },
-  {
-    id: 14,
-    image: curry_pow,
-    name: "Curryleaves Powder",
-  },
-  {
-    id: 15,
-    image: drum_flake,
-    name: "Drumstick Flakes",
-  },
-  {
-    id: 16,
-    image: garlic_flake,
-    name: "Garlic Flakes",
-  },
-  {
-    id: 17,
-    image: ginger_pow,
-    name: "Ginger Powder",
-  },
-  {
-    id: 18,
-    image: goa_flake,
-    name: "Guava Flakes",
-  },
-];
 
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
+
 
 const Main = () => {
   const settings = {
@@ -258,29 +161,7 @@ const Main = () => {
   return (
     <>
       <Navbar />
-      <section className="main_section">
-        <div className="main_back">
-          <div className="content" data-aos="fade-right">
-            <h1>
-              Purely Natural,
-              <br /> Perfectly Powdered
-            </h1>
-            <h3>
-              Unlock the pure flavors and benefits of nature's best with our
-              premium dry powders. From vibrant fruits to nutritious vegetables
-              and fragrant flowers, we've got you covered.
-            </h3>
-            <button>Know More</button>
-          </div>
-
-          <img
-            className="image_fruits"
-            src="https://i.pinimg.com/564x/6b/47/71/6b4771ba8f59ad439c7344b8ba0ffcbe.jpg"
-            alt="Fruits"
-          />
-          <img src="https://i.pinimg.com/474x/01/a0/50/01a050a72b0c67c410135e5a6b4afdf0.jpg" />
-        </div>
-      </section>
+      <Frontlanding />
 
       <section className="why_choose_us">
         <h1>Our Main Goal is to Ensure Our Customers are Happy</h1>
@@ -502,8 +383,8 @@ const Main = () => {
         </Slider>
       </section>
 
-      <section className="products-section">
-        <h1>Products</h1>
+      {/* <section className="products-section">
+        <h1>Health Benefits</h1>
         <Carousel
           responsive={responsive}
           showDots={false}
@@ -517,132 +398,165 @@ const Main = () => {
             <div className="quality" key={ind}>
               <img src={item.image} alt={`Product ${item.id}`} />
               <h3>{item.name}</h3>
+              <p>{item.benefits}</p>
             </div>
           ))}
         </Carousel>
-      </section>
+      </section> */}
 
-      <section className="enquiry-section">
-        <h1>Enquiry Form</h1>
+      <Products />
 
-        <form className="enquiry-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone">Phone</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
 
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-logo">
-            <img src={Company_logo} alt="Company Logo" />
-            <h2>Shree Hari Global Foods</h2>
-            <p>
-              is one of the leading fresh fruit vegetables, spices and grains
-              export Company from INDIA.
-            </p>
-            <div className="social-media">
-              <a href="https://www.instagram.com/shreehariglobalfoods/">
-                <InstagramIcon />
-              </a>
-              <a href="https://www.instagram.com/shreehariglobalfoods/">
-                <TwitterIcon />
-              </a>
-              <a href="https://www.instagram.com/shreehariglobalfoods/">
-                <FacebookIcon />
-              </a>
-            </div>
-          </div>
-          <div className="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About Our Company</a>
-              </li>
-              <li>
-                <a href="#">Contact Us</a>
-              </li>
-              <li>
-                <a href="#">Payment Policy</a>
-              </li>
-              <li>
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#">Terms and Conditions</a>
-              </li>
-              <li>
-                <a href="#">Cancellation and Refund</a>
-              </li>
-              <li>
-                <a href="#">Shipping and Delivery Policy</a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-contact">
-            <h3>Contact Us</h3>
-            <p>
-              16, Parmeshwar Park, Rail Nagar Main Road, Rajkot, Gujrat - 360001
-            </p>
-            <p>+91-8870292325</p>
-            <p>
-              <a href="mailto:shreehariglobalfoods@gmail.com">
-                shreehariglobalfoods@gmail.com
-              </a>
-            </p>
-          </div>
-          {/* <div className="footer-social">
-            <h3>Follow Us</h3>
-          </div> */}
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2024 Shree Hari Global Foods. All rights reserved.</p>
-        </div>
-      </footer>
+<section className="enquiry-section">
+  <div className="contact-info">
+    <h1>Get a Call Back</h1>
+    <p><strong>Address:</strong><br />Shree Hari Global Foods
+GSTIN: 29AFIFS2138E1ZX
+Plot No. 20/2, Chintamani Road, Mallimakanapura Village, Hoskote Taluk, Bengaluru 562122</p>
+    <p><strong>Phone Number:</strong><br />+91 7338490894</p>
+    <p><strong>Email Address:</strong><br />shreehariglobalfoods@gmail.com</p>
+  </div>
+  <div className="form-container">
+    <h1>Enquiry Form</h1>
+    <form className="enquiry-form" onSubmit={handleSubmit}>
+      <div className="form-group">
+       
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Company Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+      
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Business Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+       
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Post your requirements"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        ></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<footer className="footer">
+  <div className="footer-container">
+    <div className="footer-logo">
+      <img src={Company_logo} alt="Company Logo" />
+      <h2>Shree Hari Global Foods</h2>
+      <p>
+        is one of the leading fresh fruit vegetables, spices and grains export
+        Company from INDIA.
+      </p>
+      <div className="social-media1">
+        <a href="https://www.instagram.com/shreehariglobalfoods/">
+          <InstagramIcon />
+        </a>
+        <a href="https://twitter.com/shreehariglobalfoods">
+          <TwitterIcon />
+        </a>
+        <a href="https://www.facebook.com/shreehariglobalfoods">
+          <FacebookIcon />
+        </a>
+      </div>
+    </div>
+    <div className="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About Our Company</a>
+        </li>
+        <li>
+          <a href="#">Contact Us</a>
+        </li>
+        <li>
+          <a href="#">Payment Policy</a>
+        </li>
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#">Terms and Conditions</a>
+        </li>
+        <li>
+          <a href="#">Cancellation and Refund</a>
+        </li>
+        <li>
+          <a href="#">Shipping and Delivery Policy</a>
+        </li>
+      </ul>
+    </div>
+    <div className="footer-products">
+      <h3>Products</h3>
+      <ul>
+        <li>
+          <a href="#">Fruits Flakes & Powders</a>
+        </li>
+        <li>
+          <a href="#">Vegetables Flakes & Powders</a>
+        </li>
+        <li>
+          <a href="#">Leaf Flakes & Powders</a>
+        </li>
+        <li>
+          <a href="#">Rose Flakes & Powders</a>
+        </li>
+
+      </ul>
+    </div>
+    <div className="footer-contact">
+      <h3>Contact Us</h3>
+      <p>
+        16, Parmeshwar Park, Rail Nagar Main Road, Rajkot, Gujrat - 360001
+      </p>
+      <p>+91-8870292325</p>
+      <p>
+        <a href="mailto:shreehariglobalfoods@gmail.com">
+          shreehariglobalfoods@gmail.com
+        </a>
+      </p>
+    </div>
+  </div>
+  <div className="footer-bottom">
+    <p>&copy; 2024 Shree Hari Global Foods. All rights reserved.</p>
+  </div>
+</footer>
+
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Company_logo from '../assets/images/Company_logo.png';
 import './Navbar.css'; // Make sure to import the CSS file
@@ -9,9 +9,16 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [menuOpen]);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    document.body.style.marginTop = menuOpen ? '0' : '200px'; // Adjust the value as needed
   };
 
   return (
